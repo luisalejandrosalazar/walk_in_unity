@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* h1: 30px
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header .primaryNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .primaryNav .logoDiv {
+  margin: 0.2% 3%;
+  max-width: 5%;
+}
+
+header .primaryNav .logoDiv a img {
+  max-width: 100%;
+}
+
+header .primaryNav .infoDiv {
+  display: flex;
+  margin: 0.5% 2%;
+}
+
+header .primaryNav .infoDiv .hover a {
+  text-decoration: none;
+  color: #000;
+}
+
+header .primaryNav .infoDiv .hover a:hover {
+  border-bottom: 2px solid black;
+}
+
+header .primaryNav .infoDiv .divider {
+  margin: 0 1rem;
+}
+
+header .secondaryNav {
+  box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header .secondaryNav .divOne {
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .divOne .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5%;
+  margin-left: 2%;
+}
+
+header .secondaryNav .divOne .title h1 {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+  font-weight: 600;
+  font-size: 30px;
+}
+
+header .secondaryNav .divOne h1 a {
+  text-decoration: none;
+  color: #000;
+}
+
+header .secondaryNav .navList ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  margin-right: 2%;
+}
+
+header .secondaryNav .navList ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+header .secondaryNav .navList ul li a:hover {
+  color: #8e8e8e;
+}
+
+header .secondaryNav .shoppingCart {
+  margin-right: 2%;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.material-symbols-outlined { /*Font style for the search icon*/
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 100,
+  'opsz' 40
+}
+
+.secondaryNav .shoppingCart .searchBar{
+  display: flex;
+  align-items: center;
+}
+
+.secondaryNav .shoppingCart .searchBar input{
+  min-width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 25px;
+}
+
+.secondaryNav .shoppingCart .searchBar input::placeholder{
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 15px;
+  opacity: 45%;
+}
+
+
+header .secondaryNav .shoppingCart .cart a {
+  color: #000;
+}
+
+header .secondaryNav .shoppingCart #material-symbols-outlined {
+  cursor: pointer;
+  border: none;
+  position: relative;
+  right: 16%;
+}
+
+header .secondaryNav .shoppingCart .material-symbols-outlined {
+  cursor: pointer;
+  border: none;
+}
+
+main .main {
+  margin: 1%;
+}
+
+main .main .shoesGrid {
+  display: flex;
+  gap: 2%;
+  flex-wrap: wrap;
+  margin: 3%;
+}
+
+.main .shoesGrid .shoesDiv {
+  max-width: 32%;
+  line-height: 150%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main .shoesGrid .shoesImg {
+  max-width: 100%;
+  max-height: 75%;
+}
+
+footer {
+  margin-top: 5%;
+}
+
+footer ::placeholder {
+  color: black;
+}
+
+footer .main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  background-color: #eeeeee;
+  padding: 1%;
+}
+
+footer .main .left h1{
+  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.center ul {
+  margin-top: 5%;
+}
+
+.center ul li {
+  list-style: none;
+  display: inline;
+  margin: 0 20px;
+}
+
+.center ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.center ul li a:hover {
+  text-decoration: underline;
+  color: #8e8e8e;
+  text-decoration-color: #8e8e8e;
+}
+
+footer .right {
+  line-height: 2rem;
+}
+
+footer .right input {
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  background-color: #b7b7b7;
+}
+
+footer .right .btn:hover {
+  background-color: #8e8e8e;
+  border: none;
+}
+
+footer .secondaryFoot {
+  background-color: #000;
+  color: white;
+  padding: 1%;
+  text-align: center;
+}

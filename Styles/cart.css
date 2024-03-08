@@ -1,0 +1,38 @@
+main .main{
+    margin: 2% 4%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main .mainContent{
+    line-height: 2rem;
+    padding: 1%;
+    min-width: 33%;
+} 
+
+.main .heading{
+    font-size: 20px;
+}
+
+.main .secondaryContent{
+    padding: 1%;
+    min-width: 33%;
+    line-height: 3rem;
+}
+
+.main .secondaryContent .checkoutContents .initialVal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .secondaryContent .checkout{
+    padding: 4%;
+    border: none;
+    border-radius: 30px;
+    min-width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
