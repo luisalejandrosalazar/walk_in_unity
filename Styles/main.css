@@ -160,6 +160,10 @@ main .main .shoesGrid {
   flex-direction: column;
 }
 
+.main .shoesGrid .shoesDiv .shoeName{
+  font-weight: 600;
+}
+
 .main .shoesGrid .shoesImg {
   max-width: 100%;
   max-height: 75%;
