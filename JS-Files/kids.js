@@ -13,7 +13,7 @@ const shoesArrayKids = [
   },
   {
     name: "Vans",
-    img: "../Images/vans-kids.jpeg",
+    img: "../Images/vans-kids-e.jpg",
     gender: "Kid's Shoe",
     price: 10,
   },
@@ -104,6 +104,9 @@ shoesArrayKids.forEach((key)=>{
     shoePrice.innerHTML = `$${key.price}`;
     const shoeGender = document.createElement("div");
     shoeGender.innerHTML = key.gender;
+    const cart = document.createElement("button");
+    cart.classList.add("addToCart");
+    cart.innerHTML = "Add to Cart";
     
     shoesDiv.appendChild(shoesDivImg);
     
@@ -111,6 +114,7 @@ shoesArrayKids.forEach((key)=>{
     
     shoesDiv.appendChild(shoeGender);
     shoesDiv.appendChild(shoePrice);
+    shoesDiv.appendChild(cart);
     
     shoesGrid.appendChild(shoesDiv);
 

@@ -34,11 +34,14 @@ form input{
 }
 
 form button{
-    padding: 15px;
+    padding: 1%;
     background-color:#b7b7b7;
     color: #fff;
     border: none;
     border-radius: 1rem;
+    min-width: 10%;
+    margin: 1% 0.2%;
+
 }
 
 form button:hover{
@@ -57,7 +60,7 @@ form .eyeIcon{
     border-radius: 50%;
     position: absolute;
     right: 40.5%;
-    opacity: 50%;
+    opacity: 60%;
 }
 
 form .eyeIcon:hover{

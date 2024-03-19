@@ -50,7 +50,7 @@ const shoesArrayAll = [
   },
   {
     name: "Reebok",
-    img: "./Images/Reebok-Men.jpeg",
+    img: "./Images/Reebok-Men-E.jpg",
     gender: "Men's Shoe",
     price: 10,
   },
@@ -182,7 +182,7 @@ const shoesArrayAll = [
   },
   {
     name: "Vans",
-    img: "./Images/vans-kids.jpeg",
+    img: "./Images/vans-kids-e.jpg",
     gender: "Kid's Shoe",
     price: 10,
   },
@@ -216,6 +216,9 @@ shoesArrayAll.forEach((key)=>{
     shoePrice.innerHTML = `$${key.price}`;
     const shoeGender = document.createElement("div");
     shoeGender.innerHTML = key.gender;
+    const cart = document.createElement("button");
+    cart.classList.add("addToCart");
+    cart.innerHTML = "Add to Cart";
     
     shoesDiv.appendChild(shoesDivImg);
     

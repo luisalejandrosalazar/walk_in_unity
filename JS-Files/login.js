@@ -2,6 +2,7 @@ const fName = document.getElementById("name");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const eyeLogo = document.getElementById("eyeIcon");
+const subBtn = document.getElementById("submit");
 
 eyeLogo.onclick = () => {
   if (password.type == "password") {
@@ -16,8 +17,12 @@ const clearAll = () => {
   const fName = document.getElementById("name");
   const email = document.getElementById("email");
   const password = document.getElementById("password");
-
+  
   fName.value = "";
   email.value = "";
   password.value = "";
+
+  subBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+  })
 };
