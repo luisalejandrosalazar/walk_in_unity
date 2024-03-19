@@ -1,34 +1,90 @@
 const shoesArrayKids = [
-    {
-      name: "Air Force",
-      img: "../Images/p1.jpg",
-      gender: "Kid's Shoe",
-      price: 10,
-    },
-    {
-      name: "Converse",
-      img: "../Images/p1.jpg",
-      gender: "Kid's Shoe",
-      price: 10,
-    },
-    {
-      name: "Vans",
-      img: "../Images/p1.jpg",
-      gender: "Kid's Shoe",
-      price: 10,
-    },
-    {
-      name: "Skechers",
-      img: "../Images/p1.jpg",
-      gender: "Kid's Shoe",
-      price: 10,
-    },
-    {
-      name: "New Balance",
-      img: "../Images/p1.jpg",
-      gender: "Kid's Shoe",
-      price: 10,
-    },
+  {
+    name: "Air Force",
+    img: "../Images/Airforce-Kid.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Converse",
+    img: "../Images/Converse-Kid.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Vans",
+    img: "../Images/vans-kids.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Skechers",
+    img: "../Images/Skechers-Kid.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "New Balance",
+    img: "../Images/NewBalance-Kid.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Air Force",
+    img: "../Images/A2-K.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Vans",
+    img: "../Images/CustomKidsVans.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Custom Shoe",
+    img: "../Images/Mick.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Air Force",
+    img: "../Images/A3-K.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Custom Kid",
+    img: "../Images/snow.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Custom Kid",
+    img: "../Images/dog.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Custom Converse Girls",
+    img: "../Images/Conv-K.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+  {
+    name: "Custom Girls",
+    img: "../Images/Vans-Kid.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+
+  {
+    name: "Custom Girls",
+    img: "../Images/girls.jpeg",
+    gender: "Kid's Shoe",
+    price: 10,
+  },
+
   ];
 
   
