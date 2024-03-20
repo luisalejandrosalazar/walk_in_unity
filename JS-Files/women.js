@@ -4,7 +4,6 @@ function fillPage(data) {
   data = data.filter(shoe => shoe.gender === "Women's Shoe");
 
   const shoesGrid = document.getElementById("shoesGrid");
-  console.log(data)
 
   data.forEach((key) => {
 
