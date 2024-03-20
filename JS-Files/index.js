@@ -34,8 +34,7 @@ const dataRef = ref(db, 'shoes');
 //get the data
 onValue(dataRef, (snapshot) => {
   let tempData = snapshot.val();
-  //localStorage admit text only
-  localStorage.setItem('shoesData', JSON.stringify(tempData));
+  fillPage(tempData);
 
 }, {
   onlyOnce: true // Prevents to query more than one time
@@ -45,11 +44,8 @@ onValue(dataRef, (snapshot) => {
 
 //---------- fill the page ----------
 
-fillPage(JSON.parse(localStorage.getItem('shoesData')));
-
 function fillPage(data) {
   // data = data.filter(shoe => shoe.gender === "Kid's Shoe");
-
   const shoesGrid = document.getElementById("shoesGrid");
 
   data.forEach((key) => {
@@ -78,6 +74,10 @@ function fillPage(data) {
     shoesDiv.appendChild(shoePrice);
 
     shoesGrid.appendChild(shoesDiv);
+
+    //write data to localStorage (global)
+    //localStorage admit text only
+    localStorage.setItem('shoesData', JSON.stringify(data));
 
   })
 }
