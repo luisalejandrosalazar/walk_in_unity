@@ -1,101 +1,16 @@
-const shoesArrayKids = [
-  {
-    name: "Air Force",
-    img: "../Images/Airforce-Kid.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Converse",
-    img: "../Images/Converse-Kid.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Vans",
-    img: "../Images/vans-kids-e.jpg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Skechers",
-    img: "../Images/Skechers-Kid.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "New Balance",
-    img: "../Images/NewBalance-Kid.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Air Force",
-    img: "../Images/A2-K.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Vans",
-    img: "../Images/CustomKidsVans.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Custom Shoe",
-    img: "../Images/Mick.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Air Force",
-    img: "../Images/A3-K.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Custom Kid",
-    img: "../Images/snow.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Custom Kid",
-    img: "../Images/dog.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Custom Converse Girls",
-    img: "../Images/Conv-K.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
-  {
-    name: "Custom Girls",
-    img: "../Images/Vans-Kid.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
+fillPage(JSON.parse(localStorage.getItem('shoesData')));
 
-  {
-    name: "Custom Girls",
-    img: "../Images/girls.jpeg",
-    gender: "Kid's Shoe",
-    price: 10,
-  },
+function fillPage(data) {
+  data = data.filter(shoe => shoe.gender === "Kid's Shoe");
 
-  ];
+  const shoesGrid = document.getElementById("shoesGrid");
 
-  
-const shoesGrid = document.getElementById("shoesGrid");
+  data.forEach((key) => {
 
-shoesArrayKids.forEach((key)=>{
-    
     const shoesDiv = document.createElement("div");
     shoesDiv.classList.add("shoesDiv");
     const shoesDivImg = document.createElement("img");
-    shoesDivImg.src = key.img;
+    shoesDivImg.src = '.' + key.img; // - - - - -  add a '.' to the path
     shoesDivImg.classList.add("shoesImg");
     const shoeName = document.createElement("div");
     shoeName.classList.add("shoeName");
@@ -107,15 +22,16 @@ shoesArrayKids.forEach((key)=>{
     const cart = document.createElement("button");
     cart.classList.add("addToCart");
     cart.innerHTML = "Add to Cart";
-    
+
     shoesDiv.appendChild(shoesDivImg);
-    
+
     shoesDiv.appendChild(shoeName);
-    
+
     shoesDiv.appendChild(shoeGender);
     shoesDiv.appendChild(shoePrice);
     shoesDiv.appendChild(cart);
-    
+
     shoesGrid.appendChild(shoesDiv);
 
-})
+  });
+}
