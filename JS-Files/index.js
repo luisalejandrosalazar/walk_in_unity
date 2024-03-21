@@ -1,4 +1,7 @@
 "use strict"
+
+const cartArray = [];
+
 const loading = [{
   name: "Loading...",
   img: "./Images/loading.gif",
@@ -52,19 +55,29 @@ function fillPage(data) {
 
     const shoesDiv = document.createElement("div");
     shoesDiv.classList.add("shoesDiv");
+
     const shoesDivImg = document.createElement("img");
     shoesDivImg.src = key.img;
     shoesDivImg.classList.add("shoesImg");
+
     const shoeName = document.createElement("div");
     shoeName.classList.add("shoeName");
     shoeName.innerHTML = key.name;
+
     const shoePrice = document.createElement("div");
     if (key.price > 0) shoePrice.innerHTML = `$${key.price}`;
+
     const shoeGender = document.createElement("div");
     shoeGender.innerHTML = key.gender;
+    
     const cart = document.createElement("button");
     cart.classList.add("addToCart");
     cart.innerHTML = "Add to Cart";
+    cart.onclick = function(){
+      cartArray.push(key);
+      console.log(cartArray);
+      console.log(`You choose: ${key.name} which is ${key.price}!`);
+    }
 
     shoesDiv.appendChild(shoesDivImg);
 
@@ -72,8 +85,10 @@ function fillPage(data) {
 
     shoesDiv.appendChild(shoeGender);
     shoesDiv.appendChild(shoePrice);
+    shoesDiv.appendChild(cart);
 
     shoesGrid.appendChild(shoesDiv);
+    
 
     //write data to localStorage (global)
     //localStorage admit text only
