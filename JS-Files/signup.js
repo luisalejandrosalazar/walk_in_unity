@@ -1,13 +1,14 @@
 import { ManageAccount } from "./firebaseconect.js";
 
-document.getElementById("loginForm").addEventListener("submit", (event) => {
+document.getElementById("singupForm").addEventListener("submit", (event) => {
     event.preventDefault();
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const name = document.getElementById("name").value;
 
     const account = new ManageAccount();
-    account.authenticate(email, password);
+    account.register(email, password, name);
 });
 
-console.log("login form");
+console.log("signup form");

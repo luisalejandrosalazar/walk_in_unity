@@ -7,6 +7,8 @@
   <title>Walk-in Unity</title>
   <link rel="icon" type="image/x-icon" href="./Images/Logo.png" />
   <link rel="stylesheet" href="./Styles/main.css" />
+  <script type="module" src="./JS-Files/firebaseconect.js"></script>
+  <script type="module" src="./JS-Files/checklogin.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -37,7 +39,7 @@
           <span class="divider">|</span>
         </div>
         <div class="thirdInfo">
-          <span class="hover"><a href="./Pages/login.html">LogIn</a></span>
+          <span class="hover" id="authLink"><a itemprop="user login..." href="./Pages/login.html">LogIn</a></span>
         </div>
       </div>
     </nav>

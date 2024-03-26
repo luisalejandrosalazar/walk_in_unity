@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Walk-in Unity</title>
   <link rel="stylesheet" href="../Styles/main.css" />
+  <script type="module" src="../JS-Files/checklogin.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -35,7 +37,7 @@
           <span class="divider">|</span>
         </div>
         <div class="thirdInfo">
-          <span class="hover"><a href="./login.html">LogIn</a></span>
+          <span class="hover" id="authLink"><a itemprop="user login..." href="./login.html">LogIn</a></span>
         </div>
       </div>
     </nav>
@@ -74,7 +76,7 @@
     <div class="main">
       <h2>Shoes Collection</h2>
       <div class="shoesGrid" id="shoesGrid">
-    </div>
+      </div>
   </main>
 
   <footer>
