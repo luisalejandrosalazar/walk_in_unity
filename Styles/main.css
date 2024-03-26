@@ -186,9 +186,11 @@ main .main .shoesGrid {
     align-items: center;
     margin: 1.5%;
     padding: 1rem;
+    border-radius: 7px;
 }
+
 .main .shoesGrid .shoesDiv:hover {
-    box-shadow: rgba(9, 30, 66, 0.1) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    box-shadow: rgba(9, 30, 66, 0.1) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 15px 5px;
 }
 
 .main .shoesGrid .shoesDiv .shoeName {
@@ -198,6 +200,7 @@ main .main .shoesGrid {
 .main .shoesGrid .shoesImg {
     max-width: 100%;
     max-height: 65%;
+    border-radius: 7px;
 }
 
 .main .shoesGrid .addToCart {

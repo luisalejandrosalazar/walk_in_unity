@@ -61,6 +61,8 @@ function fillPage(data) {
     // data = data.filter(shoe => shoe.gender === "Kid's Shoe");
     const shoesGrid = document.getElementById("shoesGrid");
 
+    shoesGrid.innerHTML = "";
+
     data.forEach((key) => {
         const shoesDiv = document.createElement("div");
         shoesDiv.classList.add("shoesDiv");
