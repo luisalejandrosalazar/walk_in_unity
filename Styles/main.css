@@ -217,6 +217,12 @@ main .main .shoesGrid {
     opacity: 60%;
 }
 
+.main .shoesGrid .dateAdded {
+    color: #333;
+    font-size: 12px;
+    font-weight: 300;
+}
+
 footer {
     margin-top: 5%;
 }
