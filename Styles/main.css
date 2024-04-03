@@ -141,10 +141,10 @@ header .secondaryNav .shoppingCart .material-symbols-outlined {
 #authLink > a {
     position: relative;
 }
-#authLink > a:hover {
-    /* color: #1a73e8; */
+/* #authLink > a:hover {
+    color: #1a73e8;
     font-weight: bold;
-}
+} */
 
 #authLink > a:hover::after {
     content: attr(itemprop);

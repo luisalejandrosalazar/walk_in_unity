@@ -87,7 +87,7 @@ function fillPage(data) {
         cart.onclick = function () {
             cartArray.push(key);
             console.log(cartArray);
-            console.log(`You choose: ${key.name} which is ${key.price}!`);
+            console.log(`You choose: ${key.name} which is $${key.price}!`);
         };
 
         shoesDiv.appendChild(shoesDivImg);

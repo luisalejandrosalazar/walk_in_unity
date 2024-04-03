@@ -9,7 +9,7 @@ function fillPage(data) {
     const shoesDiv = document.createElement("div");
     shoesDiv.classList.add("shoesDiv");
     const shoesDivImg = document.createElement("img");
-    shoesDivImg.src = '.' + key.img; // - - - - -  add a '.' to the path
+    shoesDivImg.src = key.img; // - - - - -  add a '.' to the path
     shoesDivImg.classList.add("shoesImg");
     const shoeName = document.createElement("div");
     shoeName.classList.add("shoeName");

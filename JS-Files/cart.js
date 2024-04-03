@@ -1,1 +1,1 @@
-console.log("This is from the cart page:", cartArray);
+// console.log("This is from the cart page:", cartArray);
