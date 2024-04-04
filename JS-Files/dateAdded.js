@@ -28,4 +28,13 @@ function timeSince(date) {
     console.log("nada???????????????");
 }
 
-export { timeSince };
+function conditionWord(condition) {
+    if (condition === 1) return "Condition: Poor";
+    if (condition === 2) return "Condition: Fair";
+    if (condition === 3) return "Condition: Good";
+    if (condition === 4) return "Condition: Very Good";
+    if (condition === 5) return "Condition: Excellent";
+    return "Condition";
+}
+
+export { timeSince, conditionWord };

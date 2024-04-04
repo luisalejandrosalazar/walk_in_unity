@@ -4,431 +4,463 @@
 */
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 header .primaryNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .primaryNav .logoDiv {
-  margin: 0.2% 3%;
-  max-width: 5%;
+    margin: 0.2% 3%;
+    max-width: 5%;
 }
 
 header .primaryNav .logoDiv a img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 header .primaryNav .infoDiv {
-  display: flex;
-  margin: 0.5% 2%;
+    display: flex;
+    margin: 0.5% 2%;
 }
 
 header .primaryNav .infoDiv .hover a {
-  text-decoration: none;
-  color: #000;
+    text-decoration: none;
+    color: #000;
 }
 
 header .primaryNav .infoDiv .hover a:hover {
-  border-bottom: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 header .primaryNav .infoDiv .divider {
-  margin: 0 1rem;
+    margin: 0 1rem;
 }
 
 header .secondaryNav {
-  box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 header .secondaryNav .divOne {
-  background-color: #eeeeee;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header .divOne .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5%;
-  margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5%;
+    margin-left: 2%;
 }
 
 header .secondaryNav .divOne .title h1 {
-  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
-  font-weight: 600;
-  font-size: 30px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-size: 30px;
 }
 
 header .secondaryNav .divOne h1 a {
-  text-decoration: none;
-  color: #000;
+    text-decoration: none;
+    color: #000;
 }
 
 header .secondaryNav .navList ul {
-  display: flex;
-  gap: 3rem;
-  list-style: none;
-  margin-right: 2%;
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin-right: 2%;
 }
 
 header .secondaryNav .navList ul li a {
-  text-decoration: none;
-  color: #000;
+    text-decoration: none;
+    color: #000;
 }
 
 header .secondaryNav .navList ul li a:hover {
-  color: #8e8e8e;
+    color: #8e8e8e;
 }
 
 header .secondaryNav .shoppingCart {
-  margin-right: 2%;
-  display: flex;
-  align-items: center;
-  gap: 4rem;
+    margin-right: 2%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
 }
 
 .material-symbols-outlined {
-  /*Font style for the search icon*/
-  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 100, "opsz" 40;
+    /*Font style for the search icon*/
+    font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 100, "opsz" 40;
 }
 
 .secondaryNav .shoppingCart .searchBar {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .secondaryNav .shoppingCart .searchBar input {
-  min-width: 100%;
-  padding: 1rem;
-  border: none;
-  border-radius: 25px;
+    min-width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 25px;
 }
 
 .secondaryNav .shoppingCart .searchBar input::placeholder {
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 15px;
-  opacity: 45%;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 15px;
+    opacity: 45%;
 }
 
 header .secondaryNav .shoppingCart .cart a {
-  color: #000;
+    color: #000;
 }
 
 header .secondaryNav .shoppingCart #material-symbols-outlined {
-  cursor: pointer;
-  border: none;
-  position: relative;
-  right: 16%;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    right: 16%;
 }
 
 header .secondaryNav .shoppingCart .material-symbols-outlined {
-  cursor: pointer;
-  border: none;
+    cursor: pointer;
+    border: none;
 }
 
 #authLink > a {
-  position: relative;
+    position: relative;
 }
 #authLink > a:hover {
-  /* color: #1a73e8; */
-  font-weight: bold;
+    /* color: #1a73e8; */
+    font-weight: bold;
 }
 
 #authLink > a:hover::after {
-  content: attr(itemprop);
-  font-weight: normal;
-  position: absolute;
-  top: 33px;
-  right: 30px;
-  display: block;
-  white-space: nowrap;
-  background-color: #dfdfdf;
-  color: #333;
-  padding: 4px 8px;
-  border-radius: 5px;
-  white-space: nowrap;
-  font-size: 12px;
-  z-index: 20;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    content: attr(itemprop);
+    font-weight: normal;
+    position: absolute;
+    top: 33px;
+    right: 30px;
+    display: block;
+    white-space: nowrap;
+    background-color: #dfdfdf;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    z-index: 20;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 main .main {
-  margin: 1%;
+    margin: 1%;
 }
 
 main .main .shoesGrid {
-  display: flex;
-  gap: 2%;
-  flex-wrap: wrap;
-  margin: 3% 0;
-  justify-content: center;
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+    margin: 3% 0;
+    justify-content: center;
 }
 
 .main .shoesGrid .shoesDiv {
-  display: flex;
-  flex-grow: auto;
-  flex-basis: 330px;
-  line-height: 2rem;
-  flex-direction: column;
-  align-items: center;
-  margin: 1.5%;
-  padding: 1rem;
-  border-radius: 7px;
+    flex-grow: auto;
+    flex-basis: 400px;
+    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5%;
+    padding: 1rem;
+    border-radius: 7px;
 }
 
 .main .shoesGrid .shoesDiv:hover {
-  box-shadow: rgba(9, 30, 66, 0.1) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 15px 5px;
+    box-shadow: rgba(9, 30, 66, 0.1) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 15px 5px;
 }
 
 .main .shoesGrid .shoesDiv .shoeName {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .main .shoesGrid .shoesImg {
-  max-width: 100%;
-  max-height: 65%;
-  border-radius: 7px;
+    max-width: 100%;
+    max-height: 65%;
+    border-radius: 7px;
 }
 
+/* ----------------------------------------------------------------- */
+
+.imgInfo {
+    margin-top: -30px;
+    margin-bottom: 10px;
+    width: 90%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateAdded {
+    color: #333;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.conditionDiv {
+    padding-left: 10%;
+    position: relative;
+    color: #33333377;
+}
+
+.conditionDiv:hover {
+    color: #000;
+}
+
+.conditionDiv:hover::after {
+    border: 1px solid #88888866;
+    content: attr(tooltiptext);
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #dddddd66;
+    color: #333;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: block;
+    line-height: 1;
+}
+
+/* ----------------------------------------------------------------- */
+
 .main .shoesGrid .addToCart {
-  background-color: #000;
-  color: #fff;
-  padding: 4%;
-  cursor: pointer;
-  border-radius: 2rem;
-  min-width: 35%;
-  margin: 2% auto;
+    background-color: #000;
+    color: #fff;
+    padding: 4%;
+    cursor: pointer;
+    border-radius: 2rem;
+    min-width: 35%;
+    margin: 2% auto;
 }
 
 .main .shoesGrid .addToCart:hover {
-  opacity: 60%;
-}
-
-.main .shoesGrid .dateAdded {
-  color: #333;
-  font-size: 12px;
-  font-weight: 300;
+    opacity: 60%;
 }
 
 footer {
-  margin-top: 5%;
+    margin-top: 5%;
 }
 
 footer ::placeholder {
-  color: black;
+    color: black;
 }
 
 footer .main {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  background-color: #eeeeee;
-  padding: 1%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background-color: #eeeeee;
+    padding: 1%;
 }
 
 footer .main .left h1 {
-  text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
-  font-weight: 600;
-  font-size: 30px;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-size: 30px;
 }
 
 .center ul {
-  margin-top: 5%;
+    margin-top: 5%;
 }
 
 .center ul li {
-  list-style: none;
-  display: inline;
-  margin: 0 20px;
+    list-style: none;
+    display: inline;
+    margin: 0 20px;
 }
 
 .center ul li a {
-  text-decoration: none;
-  color: #000;
+    text-decoration: none;
+    color: #000;
 }
 
 .center ul li a:hover {
-  text-decoration: underline;
-  color: #8e8e8e;
-  text-decoration-color: #8e8e8e;
+    text-decoration: underline;
+    color: #8e8e8e;
+    text-decoration-color: #8e8e8e;
 }
 
 footer .right {
-  line-height: 2rem;
+    line-height: 2rem;
 }
 
 footer .right input {
-  padding: 12px;
-  border-radius: 15px;
-  border: none;
+    padding: 12px;
+    border-radius: 15px;
+    border: none;
 }
 
 footer .right #btn:hover {
-  background-color: #b7b7b7;
-  cursor: pointer;
+    background-color: #b7b7b7;
+    cursor: pointer;
 }
 
 footer .secondaryFoot {
-  background-color: #000;
-  color: white;
-  padding: 1%;
-  text-align: center;
+    background-color: #000;
+    color: white;
+    padding: 1%;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
-  header .primaryNav {
-    padding: 3%;
-  }
+    header .primaryNav {
+        padding: 3%;
+    }
 
-  header .primaryNav .logoDiv {
-    min-width: 15%;
-  }
-  header .secondaryNav .divOne {
-    padding: 1%;
-  }
-  header .secondaryNav .divOne .title h1 {
-    display: none;
-  }
-  header .secondaryNav .divOne .navList {
-    margin-right: 15%;
-  }
+    header .primaryNav .logoDiv {
+        min-width: 15%;
+    }
+    header .secondaryNav .divOne {
+        padding: 1%;
+    }
+    header .secondaryNav .divOne .title h1 {
+        display: none;
+    }
+    header .secondaryNav .divOne .navList {
+        margin-right: 15%;
+    }
 
-  header .secondaryNav .divOne .shoppingCart {
-    display: none;
-  }
-  .main .shoesGrid .shoesImg {
-    max-width: 80%;
-  }
-  .main .shoesGrid .addToCart {
-    padding: 3%;
-    min-width: 30%;
-  }
-  footer .main {
-    display: flex;
-    align-items: center;
-  }
-  footer .center ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  footer .right {
-    display: none;
-  }
+    header .secondaryNav .divOne .shoppingCart {
+        display: none;
+    }
+    /* .main .shoesGrid .shoesImg {
+        max-width: 80%;
+    } */
+    .main .shoesGrid .addToCart {
+        padding: 3%;
+        min-width: 30%;
+    }
+    footer .main {
+        display: flex;
+        align-items: center;
+    }
+    footer .center ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    footer .right {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 768px) {
-  header .primaryNav {
-    padding: 2%;
-  }
-  header .primaryNav .logoDiv {
-    max-width: 20%;
-  }
-  header .secondaryNav .divOne {
-    display: flex;
-    justify-content: space-around;
-  }
-  header .secondaryNav .divOne .title {
-    margin-left: -5%;
-  }
+    header .primaryNav {
+        padding: 2%;
+    }
+    header .primaryNav .logoDiv {
+        max-width: 20%;
+    }
+    header .secondaryNav .divOne {
+        display: flex;
+        justify-content: space-around;
+    }
+    header .secondaryNav .divOne .title {
+        margin-left: -5%;
+    }
 
-  header .secondaryNav .divOne .shoppingCart {
-    display: none;
-  }
-  .main .shoesGrid .shoesDiv {
-    flex-basis: 450px;
-  }
-  .main .shoesGrid .addToCart {
-    padding: 3%;
-    min-width: 30%;
-  }
-  footer .main {
-    display: flex;
-    align-items: center;
-  }
-  footer .main .left {
-    margin-left: -10%;
-  }
-  footer .center ul {
-    display: flex;
-    flex-direction: column;
-    line-height: 2rem;
-  }
-  footer .right {
-    display: none;
-  }
+    header .secondaryNav .divOne .shoppingCart {
+        display: none;
+    }
+    .main .shoesGrid .shoesDiv {
+        flex-basis: 450px;
+    }
+    .main .shoesGrid .addToCart {
+        padding: 3%;
+        min-width: 30%;
+    }
+    footer .main {
+        display: flex;
+        align-items: center;
+    }
+    footer .main .left {
+        margin-left: -10%;
+    }
+    footer .center ul {
+        display: flex;
+        flex-direction: column;
+        line-height: 2rem;
+    }
+    footer .right {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {
-  header .primaryNav {
-    padding: 2%;
-  }
-  header .primaryNav .logoDiv {
-    max-width: 10%;
-  }
-  header .secondaryNav .divOne .shoppingCart {
-    gap: 3rem;
-    margin-right: 1%;
-  }
-  .main .shoesGrid .shoesImg {
-    max-width: 80%;
-  }
-  footer .main {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
+    header .primaryNav {
+        padding: 2%;
+    }
+    header .primaryNav .logoDiv {
+        max-width: 10%;
+    }
+    header .secondaryNav .divOne .shoppingCart {
+        gap: 3rem;
+        margin-right: 1%;
+    }
+    /* .main .shoesGrid .shoesImg {
+        max-width: 80%;
+    } */
+    footer .main {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 
-  footer .right {
-    display: none;
-  }
+    footer .right {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1250px) {
-  header .primaryNav {
-    padding: 2%;
-  }
-  header .primaryNav .logoDiv {
-    max-width: 7%;
-  }
-  header .secondaryNav .divOne .shoppingCart {
-    gap: 3rem;
-    margin-right: 1%;
-  }
-  .main .shoesGrid .shoesImg {
-    max-width: 80%;
-  }
-  footer .main {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
+    header .primaryNav {
+        padding: 2%;
+    }
+    header .primaryNav .logoDiv {
+        max-width: 7%;
+    }
+    header .secondaryNav .divOne .shoppingCart {
+        gap: 3rem;
+        margin-right: 1%;
+    }
+    /* .main .shoesGrid .shoesImg {
+        max-width: 80%;
+    } */
+    footer .main {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 
-  footer .center ul {
-    display: flex;
-    flex-direction: column;
-    line-height: 2rem;
-  }
-}
-
-@media only screen and (min-width: 1251px) {
-  .main .shoesGrid .shoesDiv {
-    flex-basis: 330px;
-    min-width: 26%;
-  }
+    footer .center ul {
+        display: flex;
+        flex-direction: column;
+        line-height: 2rem;
+    }
 }
