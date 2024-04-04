@@ -10,9 +10,36 @@ main .main{
     min-width: 33%;
 } 
 
-.main .heading{
+.main .mainContent .heading{
     font-size: 20px;
 }
+
+.main .mainContent .productContent .shoeDataDiv{
+    display: flex;
+    gap: 50%;
+    padding: 2%;
+}
+
+.main .mainContent .productContent .shoeDataDiv .imageDiv{
+    max-width: 50%;
+    display: flex;
+    gap: 2rem;
+}
+
+.main .mainContent .productContent .shoeDataDiv img{
+    max-width: 60%;
+}
+
+.main .mainContent .productContent .shoeDataDiv .shoeDetails .selection{
+    border: none;
+    padding: 6px;
+}
+
+.main .mainContent .productContent .shoeDataDiv .shoeDetails .material-symbols-outlined{
+   margin: 10% auto;
+   cursor: pointer;
+} 
+
 
 .main .secondaryContent{
     padding: 1%;

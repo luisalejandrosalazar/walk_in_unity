@@ -1,18 +1,10 @@
-main .main .partialDiv h2 {
-    text-align: center;
-}
-
 main .main .partialDiv {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-main .main .partialDiv .container {
-    min-width: 60%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 main .main .partialDiv .container img {
-    max-width: 100%;
+  max-width: 80%;
+  margin-left: 7%;
 }
