@@ -10,103 +10,127 @@ console.log("Selected shoe data:", selectedShoeData);
 displayCartItems(selectedShoeData);
 
 function displayCartItems(data) {
-  if (data === null) {
-    console.log("No Items in the cart.");
-    outputDiv.innerHTML = "There is no items in the cart.";
-  } else {
-    outputDiv.innerHTML = `There is ${data.length} items the cart.`;
+    if (data === null) {
+        console.log("No Items in the cart.");
+        outputDiv.innerHTML = "There is no items in the cart.";
+    } else {
+        let vBase = 0;
+        const vTax = 0.13;
 
-    data.forEach((value, index) => {
-      const shoesDataDiv = document.createElement("div");
-      shoesDataDiv.classList.add("shoeDataDiv");
+        outputDiv.innerHTML = `There is ${data.length} items the cart.`;
 
-      const imageDiv = document.createElement("div");
-      imageDiv.classList.add("imageDiv");
-      const image = document.createElement("img");
-      image.src = data[index].img;
-      imageDiv.appendChild(image);
+        data.forEach((value, index) => {
+            const shoesDataDiv = document.createElement("div");
+            shoesDataDiv.classList.add("shoeDataDiv");
 
-      const shoeDetails = document.createElement("div");
-      shoeDetails.classList.add("shoeDetails");
-      shoeDetails.innerHTML = `<div> <strong> ${data[index].name} </strong> </div> 
+            const imageDiv = document.createElement("div");
+            imageDiv.classList.add("imageDiv");
+            const image = document.createElement("img");
+            image.src = data[index].img;
+            imageDiv.appendChild(image);
+
+            const shoeDetails = document.createElement("div");
+            shoeDetails.classList.add("shoeDetails");
+            shoeDetails.innerHTML = `<div> <strong> ${data[index].name} </strong> </div> 
             <div> ${data[index].gender} </div>
             <div> Size: ${data[index].sizeUS} </div>  
             <span> Quantity: </span>
             `;
-      const numberOfShoes = document.createElement("select");
-      numberOfShoes.id = "selection";
-      numberOfShoes.classList.add("selection");
-      numberOfShoes.onchange = function () {
-        calculateTotal(index);
-      };
-      numberOfShoes.innerHTML = `
-            <option value="1"> 1 </option>
-            <option value="2"> 2 </option>
-            <option value="3"> 3 </option>
+            const numberOfShoes = document.createElement("select");
+            numberOfShoes.id = "quantity-" + index;
+            numberOfShoes.classList.add("selection");
+            numberOfShoes.onchange = function () {
+                // calculateTotal(index);
+                changeQuantity(index);
+            };
+            numberOfShoes.innerHTML = `
+            <option value="1" ${data[index].quantity == 1 ? "selected" : ""}> 1 </option>
+            <option value="2" ${data[index].quantity == 2 ? "selected" : ""}> 2 </option>
+            <option value="3" ${data[index].quantity == 3 ? "selected" : ""}> 3 </option>
             `;
 
-      const deleteIcon = document.createElement("span");
-      deleteIcon.classList.add("deleteIcon");
-      deleteIcon.innerHTML = `<span class="material-symbols-outlined">
+            const deleteIcon = document.createElement("span");
+            deleteIcon.classList.add("deleteIcon");
+            deleteIcon.innerHTML = `<span class="material-symbols-outlined">
             delete
             </span>`;
-      deleteIcon.addEventListener("click", () => {
-        deleteCartItem(index);
-      });
+            deleteIcon.addEventListener("click", () => {
+                deleteCartItem(index);
+            });
 
-      shoeDetails.appendChild(numberOfShoes);
-      shoeDetails.appendChild(deleteIcon);
+            shoeDetails.appendChild(numberOfShoes);
+            shoeDetails.appendChild(deleteIcon);
 
-      const shoePrice = document.createElement("div");
-      shoePrice.classList.add("shoePrice");
-      shoePrice.innerHTML = `<div id="totPrice">$${data[index].price}.00 </div>`;
+            const shoePrice = document.createElement("div");
+            shoePrice.classList.add("shoePrice");
+            shoePrice.innerHTML = `<div id="totPrice">$${data[index].price}.00 </div>`;
 
-      const horizontalScale = document.createElement("hr");
+            const horizontalScale = document.createElement("hr");
 
-      outputDiv.appendChild(shoesDataDiv);
+            outputDiv.appendChild(shoesDataDiv);
 
-      imageDiv.appendChild(shoeDetails);
-      shoesDataDiv.appendChild(imageDiv);
-      shoesDataDiv.appendChild(shoePrice);
-      outputDiv.appendChild(horizontalScale);
+            imageDiv.appendChild(shoeDetails);
+            shoesDataDiv.appendChild(imageDiv);
+            shoesDataDiv.appendChild(shoePrice);
+            outputDiv.appendChild(horizontalScale);
 
-      //   totalPrice.innerHTML = `$`;
-      calculateTotal(index);
-    });
-  }
+            vBase = vBase + data[index].price * data[index].quantity;
+
+            //   totalPrice.innerHTML = `$`;
+            //calculateTotal(index);
+        });
+        // console.log(vBase);
+        // console.log(vBase * vTax);
+        const tBase = "$ " + vBase.toFixed(2);
+        const tTax = "$ " + (vBase * vTax).toFixed(2);
+        const tTotal = "$ " + (vBase + vBase * vTax).toFixed(2);
+
+        document.getElementById("subtotal").innerHTML = tBase;
+        document.getElementById("tax").innerHTML = tTax;
+        document.getElementById("total").innerHTML = tTotal;
+    }
 }
 
 function deleteCartItem(index) {
-  //   alert("Button Clicked!!!");
-  const deleteItem = selectedShoeData.splice(index, 1);
-  console.log("Updated Array:", selectedShoeData);
-  console.log(`Removed Item of index ${index}:`, deleteItem);
+    //   alert("Button Clicked!!!");
+    const deleteItem = selectedShoeData.splice(index, 1);
+    console.log("Updated Array:", selectedShoeData);
+    console.log(`Removed Item of index ${index}:`, deleteItem);
 
-  // localStorage.removeItem("chosenShoe");
-  localStorage.setItem("chosenShoe", JSON.stringify(selectedShoeData));
+    // localStorage.removeItem("chosenShoe");
+    localStorage.setItem("chosenShoe", JSON.stringify(selectedShoeData));
 
-  outputDiv.innerHTML = `There is ${selectedShoeData.length} items in your cart`;
+    outputDiv.innerHTML = `There is ${selectedShoeData.length} items in your cart`;
 
-  displayCartItems(selectedShoeData);
+    displayCartItems(selectedShoeData);
 }
 
-function calculateTotal(index) {
-  const quantityOfShoes = document.getElementById("selection");
-  console.log("Selected shoes:", quantityOfShoes);
-
-  let selectedAmount = parseInt(
-    quantityOfShoes.options[quantityOfShoes.selectedIndex].value
-  );
-
-  console.log(selectedAmount);
-
-  let priceOfTheShoe = selectedShoeData[index].price;
-
-  let total = selectedAmount * priceOfTheShoe;
-  console.log("Price: $" + priceOfTheShoe);
-  console.log("Total: $" + total);
-
-  priceOfTheShoe.innerText = `$${total}`;
-
-  totalPrice.innerHTML = `$${total}`;
+function changeQuantity(index) {
+    const quantityOfShoes = document.getElementById("quantity-" + index).value;
+    // console.log("index", index);
+    // console.log("Selected shoes:", quantityOfShoes);
+    //update data
+    selectedShoeData[index].quantity = quantityOfShoes;
+    localStorage.setItem("chosenShoe", JSON.stringify(selectedShoeData));
+    //re-render cart
+    displayCartItems(selectedShoeData);
 }
+
+// function calculateTotal(index) {
+//     console.log("Index:", index);
+
+//     const quantityOfShoes = document.getElementById("selection");
+//     console.log("Selected shoes:", quantityOfShoes);
+
+//     let selectedAmount = parseInt(quantityOfShoes.options[quantityOfShoes.selectedIndex].value);
+
+//     console.log(selectedAmount);
+
+//     let priceOfTheShoe = selectedShoeData[index].price;
+
+//     let total = selectedAmount * priceOfTheShoe;
+//     console.log("Price: $" + priceOfTheShoe);
+//     console.log("Total: $" + total);
+
+//     priceOfTheShoe.innerText = `$${total}`;
+// }

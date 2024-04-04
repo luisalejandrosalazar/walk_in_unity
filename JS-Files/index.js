@@ -137,6 +137,8 @@ function fillPage(data) {
 
 function addItemsToCart(key) {
     let cartArray = JSON.parse(localStorage.getItem("chosenShoe")) || [];
+    key.quantity = 1;
+    console.log(key);
     cartArray.push(key);
     localStorage.setItem("chosenShoe", JSON.stringify(cartArray));
 
