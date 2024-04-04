@@ -91,8 +91,6 @@ function deleteCartItem(index) {
 }
 
 function calculateTotal(index) {
-  // console.log("Index:", index);
-
   const quantityOfShoes = document.getElementById("selection");
   console.log("Selected shoes:", quantityOfShoes);
 
@@ -102,12 +100,13 @@ function calculateTotal(index) {
 
   console.log(selectedAmount);
 
-  
   let priceOfTheShoe = selectedShoeData[index].price;
-  
+
   let total = selectedAmount * priceOfTheShoe;
   console.log("Price: $" + priceOfTheShoe);
   console.log("Total: $" + total);
-  
+
   priceOfTheShoe.innerText = `$${total}`;
+
+  totalPrice.innerHTML = `$${total}`;
 }
