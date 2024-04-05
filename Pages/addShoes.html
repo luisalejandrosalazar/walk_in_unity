@@ -95,12 +95,18 @@
       <div class="main">
         <h2>You can simply add your shoes to the site.</h2>
 
-        <form action="">
+        
+        <div id="reviewMessage">
+            <h3>Your data is under review:</h3>
+            <p id="submittedData"></p>
+          </div>
+
+        <form action="" id="formInput">
           <label for="sName">Shoe/Brand Name:</label><br />
           <input type="text" id="sName" name="sName" placeholder="Enter the shoes or brand name." required/><br />
 
           <label for="color">Color:</label><br />
-          <input type="text" id="color" name="color" placeholder="Enter the color. required"/><br />
+          <input type="text" id="color" name="color" placeholder="Enter the color." required/><br />
 
           <label for="condition">Condition:</label> <br>
           <input type="radio" id="excellent" name="condition" value="excellent"/>
@@ -124,6 +130,7 @@
 
           <br>
           <input type="submit" value="Submit">
+
         </form>
       </div>
     </main>
@@ -167,6 +174,6 @@
       </div>
     </footer>
 
-    <script type="module" src="../JS-Files/kids.js"></script>
+    <script type="module" src="../JS-Files/addShoes.js"></script>
   </body>
 </html>
