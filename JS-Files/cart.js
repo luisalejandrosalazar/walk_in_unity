@@ -76,8 +76,7 @@ function displayCartItems(data) {
 
             vBase = vBase + data[index].price * data[index].quantity;
 
-            //   totalPrice.innerHTML = `$`;
-            //calculateTotal(index);
+           
         });
         // console.log(vBase);
         // console.log(vBase * vTax);
@@ -92,7 +91,6 @@ function displayCartItems(data) {
 }
 
 function deleteCartItem(index) {
-    //   alert("Button Clicked!!!");
     const deleteItem = selectedShoeData.splice(index, 1);
     console.log("Updated Array:", selectedShoeData);
     console.log(`Removed Item of index ${index}:`, deleteItem);
@@ -107,8 +105,7 @@ function deleteCartItem(index) {
 
 function changeQuantity(index) {
     const quantityOfShoes = document.getElementById("quantity-" + index).value;
-    // console.log("index", index);
-    // console.log("Selected shoes:", quantityOfShoes);
+
     //update data
     selectedShoeData[index].quantity = quantityOfShoes;
     localStorage.setItem("chosenShoe", JSON.stringify(selectedShoeData));
@@ -116,21 +113,13 @@ function changeQuantity(index) {
     displayCartItems(selectedShoeData);
 }
 
-// function calculateTotal(index) {
-//     console.log("Index:", index);
 
-//     const quantityOfShoes = document.getElementById("selection");
-//     console.log("Selected shoes:", quantityOfShoes);
+function popCheckout(){
+    alert("Order Submitted Successful.");
 
-//     let selectedAmount = parseInt(quantityOfShoes.options[quantityOfShoes.selectedIndex].value);
+    outputDiv.innerHTML = "Order Received Successfully.";
 
-//     console.log(selectedAmount);
-
-//     let priceOfTheShoe = selectedShoeData[index].price;
-
-//     let total = selectedAmount * priceOfTheShoe;
-//     console.log("Price: $" + priceOfTheShoe);
-//     console.log("Total: $" + total);
-
-//     priceOfTheShoe.innerText = `$${total}`;
-// }
+    document.getElementById("subtotal").innerHTML = "-" ;
+        document.getElementById("tax").innerHTML = "-" ;
+        document.getElementById("total").innerHTML = "-" ;
+}

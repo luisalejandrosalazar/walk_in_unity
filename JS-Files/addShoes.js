@@ -24,6 +24,7 @@ form.addEventListener('submit', function(event) {
       <strong>Condition:</strong> ${condition.value}<br>
       <strong>Description:</strong> ${description}<br>
       <strong>Shoes Image:</strong> ${shoesImage}<br>
+      <p> You will receive an email once we update the status. Thanks for your patience </p>
     `;
 
     reviewMessageDiv.style.display = 'block';

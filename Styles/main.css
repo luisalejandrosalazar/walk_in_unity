@@ -79,7 +79,7 @@ header .secondaryNav .navList ul {
     display: flex;
     gap: 3rem;
     list-style: none;
-    margin-right: 2%;
+    /* margin-right: 2%; */
 }
 
 header .secondaryNav .navList ul li a {
