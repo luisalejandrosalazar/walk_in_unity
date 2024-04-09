@@ -3,12 +3,12 @@
 const cartArray = [];
 
 const loading = [
-    {
-        name: "Loading...",
-        img: "./Images/loading.gif",
-        gender: "",
-        price: 0.0,
-    },
+  {
+    name: "Loading...",
+    img: "./Images/loading.gif",
+    gender: "",
+    price: 0.0,
+  },
 ];
 fillPage(loading);
 
@@ -17,24 +17,24 @@ import { conditionWord, timeSince } from "./dateAdded.js";
 
 //conect to firebase
 import {
-    getDatabase,
-    ref,
-    query,
-    orderByChild,
-    equalTo,
-    onValue,
+  getDatabase,
+  ref,
+  query,
+  orderByChild,
+  equalTo,
+  onValue,
 } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 
 //Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBQKAAnJyCpGJnOBD4_vuvLDoIhNZ8zc9Q",
-    authDomain: "walkin-unity.firebaseapp.com",
-    projectId: "walkin-unity",
-    storageBucket: "walkin-unity.appspot.com",
-    messagingSenderId: "539378214336",
-    appId: "1:539378214336:web:cdbc22d706b202d4145425",
-    //measurementId:
+  apiKey: "AIzaSyBQKAAnJyCpGJnOBD4_vuvLDoIhNZ8zc9Q",
+  authDomain: "walkin-unity.firebaseapp.com",
+  projectId: "walkin-unity",
+  storageBucket: "walkin-unity.appspot.com",
+  messagingSenderId: "539378214336",
+  appId: "1:539378214336:web:cdbc22d706b202d4145425",
+  //measurementId:
 };
 
 // Initialize Firebase
@@ -48,99 +48,104 @@ const dataRef = ref(db, "shoes");
 
 //get the data
 onValue(
-    dataRef,
-    (snapshot) => {
-        let tempData = snapshot.val();
-        fillPage(tempData);
-    },
-    {
-        onlyOnce: true, // Prevents to query more than one time
-    }
+  dataRef,
+  (snapshot) => {
+    let tempData = snapshot.val();
+    fillPage(tempData);
+  },
+  {
+    onlyOnce: true, // Prevents to query more than one time
+  }
 );
 
 //---------- fill the page ----------
 
 function fillPage(data) {
-    // data = data.filter(shoe => shoe.gender === "Kid's Shoe");
-    const shoesGrid = document.getElementById("shoesGrid");
+  // data = data.filter(shoe => shoe.gender === "Kid's Shoe");
+  const shoesGrid = document.getElementById("shoesGrid");
 
-    shoesGrid.innerHTML = "";
+  shoesGrid.innerHTML = "";
 
-    data.forEach((key) => {
-        const shoesDiv = document.createElement("div");
-        shoesDiv.classList.add("shoesDiv");
-        const shoesDivImg = document.createElement("img");
-        shoesDivImg.src = key.img;
-        shoesDivImg.classList.add("shoesImg");
-        const shoeName = document.createElement("div");
-        shoeName.classList.add("shoeName");
-        shoeName.innerHTML = key.name;
-        const shoePrice = document.createElement("div");
-        shoePrice.innerHTML = `$${key.price}`;
-        const shoeGender = document.createElement("div");
-        shoeGender.innerHTML = key.gender;
-        const shoeSize = document.createElement("div");
-        shoeSize.innerHTML = "Size: " + key.sizeUS + " (US)";
+  data.forEach((key) => {
+    const shoesDiv = document.createElement("div");
+    shoesDiv.classList.add("shoesDiv");
+    const shoesDivImg = document.createElement("img");
+    shoesDivImg.src = key.img;
+    shoesDivImg.classList.add("shoesImg");
+    const shoeName = document.createElement("div");
+    shoeName.classList.add("shoeName");
+    shoeName.innerHTML = key.name;
+    const shoePrice = document.createElement("div");
+    shoePrice.innerHTML = `$${key.price}`;
+    const shoeGender = document.createElement("div");
+    shoeGender.innerHTML = key.gender;
+    const shoeSize = document.createElement("div");
+    shoeSize.innerHTML = "Size: " + key.sizeUS + " (US)";
 
-        const cart = document.createElement("button");
-        cart.classList.add("addToCart");
+    const cart = document.createElement("button");
+    cart.classList.add("addToCart");
+    cart.innerHTML = "Add to Cart";
+    cart.onclick = () => {
+      addItemsToCart(key);
+      cart.innerHTML = "Adding...";
+
+      setTimeout(() => {
         cart.innerHTML = "Add to Cart";
-        cart.onclick = () => {
-            addItemsToCart(key);
-        };
+      }, 1000);
+    };
 
-        shoesDiv.appendChild(shoesDivImg);
+    shoesDiv.appendChild(shoesDivImg);
 
-        //-------------------------------------------------------------
-        //div
-        const imgInfo = document.createElement("div");
-        imgInfo.className = "imgInfo";
-        //date addded
-        const shoeDate = document.createElement("div");
-        if (key.date) shoeDate.innerHTML = `${timeSince(key.date)}`;
-        shoeDate.className = "dateAdded";
+    //-------------------------------------------------------------
+    //div
+    const imgInfo = document.createElement("div");
+    imgInfo.className = "imgInfo";
+    //date addded
+    const shoeDate = document.createElement("div");
+    if (key.date) shoeDate.innerHTML = `${timeSince(key.date)}`;
+    shoeDate.className = "dateAdded";
 
-        const conditionDiv = document.createElement("div");
-        conditionDiv.className = "conditionDiv";
-        conditionDiv.setAttribute("tooltiptext", `${conditionWord(key.condition)}`);
+    const conditionDiv = document.createElement("div");
+    conditionDiv.className = "conditionDiv";
+    conditionDiv.setAttribute("tooltiptext", `${conditionWord(key.condition)}`);
 
-        //condition
-        for (let i = 1; i <= 5 - key.condition; i++) {
-            const checkEmpty = document.createElement("i");
-            checkEmpty.className = "fa-regular fa-circle";
-            conditionDiv.appendChild(checkEmpty);
-        }
-        for (let i = 1; i <= key.condition; i++) {
-            const checkOk = document.createElement("i");
-            checkOk.className = "fa-solid fa-circle-check";
-            conditionDiv.appendChild(checkOk);
-        }
+    //condition
+    for (let i = 1; i <= 5 - key.condition; i++) {
+      const checkEmpty = document.createElement("i");
+      checkEmpty.className = "fa-regular fa-circle";
+      conditionDiv.appendChild(checkEmpty);
+    }
+    for (let i = 1; i <= key.condition; i++) {
+      const checkOk = document.createElement("i");
+      checkOk.className = "fa-solid fa-circle-check";
+      conditionDiv.appendChild(checkOk);
+    }
 
-        imgInfo.appendChild(shoeDate);
-        imgInfo.appendChild(conditionDiv);
-        shoesDiv.appendChild(imgInfo);
+    imgInfo.appendChild(shoeDate);
+    imgInfo.appendChild(conditionDiv);
+    shoesDiv.appendChild(imgInfo);
 
-        //-------------------------------------------------------------
+    //-------------------------------------------------------------
 
-        shoesDiv.appendChild(shoeName);
-        shoesDiv.appendChild(shoeGender);
-        shoesDiv.appendChild(shoeSize);
-        shoesDiv.appendChild(shoePrice);
-        shoesDiv.appendChild(cart);
+    shoesDiv.appendChild(shoeName);
+    shoesDiv.appendChild(shoeGender);
+    shoesDiv.appendChild(shoeSize);
+    shoesDiv.appendChild(shoePrice);
+    shoesDiv.appendChild(cart);
 
-        shoesGrid.appendChild(shoesDiv);
-        //write data to localStorage (global)
-        //localStorage admit text only
-        localStorage.setItem("shoesData", JSON.stringify(data));
-    });
+    shoesGrid.appendChild(shoesDiv);
+    //write data to localStorage (global)
+    //localStorage admit text only
+    localStorage.setItem("shoesData", JSON.stringify(data));
+  });
 }
 
 function addItemsToCart(key) {
-    let cartArray = JSON.parse(localStorage.getItem("chosenShoe")) || [];
-    key.quantity = 1;
-    console.log(key);
-    cartArray.push(key);
-    localStorage.setItem("chosenShoe", JSON.stringify(cartArray));
+  let cartArray = JSON.parse(localStorage.getItem("chosenShoe")) || [];
+  key.quantity = 1;
+  console.log(key);
+  cartArray.push(key);
+  localStorage.setItem("chosenShoe", JSON.stringify(cartArray));
 
-    console.log(`You chose ${key.name} which is $${key.price}!`);
+  console.log(`You chose ${key.name} which is $${key.price}!`);
 }
