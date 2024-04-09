@@ -1,65 +1,110 @@
-main .main{
-    margin: 2% 4%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.main .mainContent{
-    line-height: 2rem;
-    padding: 1%;
-    min-width: 33%;
-} 
-
-.main .mainContent .heading{
-    font-size: 20px;
-}
-
-.main .mainContent .productContent .shoeDataDiv{
-    display: flex;
-    gap: 50%;
-    padding: 2%;
-}
-
-.main .mainContent .productContent .shoeDataDiv .imageDiv{
-    max-width: 50%;
-    display: flex;
-    gap: 2rem;
-}
-
-.main .mainContent .productContent .shoeDataDiv img{
-    max-width: 60%;
-}
-
-.main .mainContent .productContent .shoeDataDiv .shoeDetails .selection{
-    border: none;
-    padding: 6px;
-}
-
-.main .mainContent .productContent .shoeDataDiv .shoeDetails .material-symbols-outlined{
-   margin: 10% auto;
-   cursor: pointer;
-} 
-
-
-.main .secondaryContent{
-    padding: 1%;
-    min-width: 33%;
-    line-height: 3rem;
-}
-
-.main .secondaryContent .checkoutContents .initialVal{
-    display: flex;
-    justify-content: space-between;
-}
-
-.main .secondaryContent .checkout{
-    padding: 4%;
-    border: none;
-    border-radius: 30px;
+hr{
     min-width: 100%;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer;
+    border: 1px solid black;
+}
+
+main .main {
+  margin: 2% 4%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main .mainContent {
+  line-height: 2rem;
+  padding: 1%;
+  min-width: 40%;
+}
+
+.main .mainContent .heading {
+  font-size: 20px;
+}
+
+.main .mainContent .productContent .shoeDataDiv {
+  display: flex;
+  gap: 50%;
+  padding: 2%;
+}
+
+.main .mainContent .productContent .shoeDataDiv .imageDiv {
+  max-width: 50%;
+  display: flex;
+  gap: 2rem;
+}
+
+.main .mainContent .productContent .shoeDataDiv img {
+  max-width: 60%;
+}
+
+.main .mainContent .productContent .shoeDataDiv .shoeDetails .selection {
+  border: none;
+  padding: 6px;
+}
+
+.main
+  .mainContent
+  .productContent
+  .shoeDataDiv
+  .shoeDetails
+  .material-symbols-outlined {
+  margin: 10% auto;
+  cursor: pointer;
+}
+
+.main .secondaryContent {
+  padding: 1%;
+  min-width: 33%;
+  line-height: 3rem;
+}
+
+.main .secondaryContent .checkoutContents .initialVal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main .secondaryContent .checkout {
+  padding: 4%;
+  border: none;
+  border-radius: 30px;
+  min-width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.main .mainContent .productContent .parentDiv {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.main .mainContent .productContent .parentDiv .newParentDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .mainContent .productContent .parentDiv .leftDiv {
+  display: flex;
+  align-items: center;
+}
+
+.main .mainContent .productContent .parentDiv .leftDiv img {
+  max-width: 20%;
+}
+
+.main .mainContent .productContent .parentDiv .rightDiv {
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+}
+
+.main .mainContent .productContent .parentDiv .rightDiv .dummies {
+  padding: 8%;
+  border: none;
+  border-radius: 5rem;
+  margin: 5% auto;
+  min-width: 100%;
+  cursor: pointer;
 }
