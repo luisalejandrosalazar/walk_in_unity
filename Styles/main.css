@@ -434,6 +434,12 @@ footer .secondaryFoot {
     justify-content: space-around;
   }
 
+  footer .center ul {
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+  }
+
   footer .right {
     display: none;
   }
@@ -459,9 +465,5 @@ footer .secondaryFoot {
     justify-content: space-around;
   }
 
-  footer .center ul {
-    display: flex;
-    flex-direction: column;
-    line-height: 2rem;
-  }
+
 }

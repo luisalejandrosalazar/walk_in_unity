@@ -32,3 +32,20 @@ form.addEventListener('submit', function(event) {
     // Hide the form
     form.style.display = 'none';
   });
+
+  document.getElementById('shoesImage').addEventListener('change', function() {
+    var file = this.files[0];
+    if (file) {
+      var reader = new FileReader();
+      reader.onload = function(event) {
+        var img = new Image();
+        img.src = event.target.result;
+        img.onload = function() {
+          var preview = document.getElementById('imagePreview');
+          preview.innerHTML = '';
+          preview.appendChild(img);
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+  });

@@ -161,10 +161,7 @@ function changeQuantity(index) {
 //     newDiv.appendChild(rightDiv);
 //   });
 
-//   document.getElementById("subtotal").innerHTML = "-";
-//   document.getElementById("tax").innerHTML = "-";
-//   document.getElementById("total").innerHTML = "-";
-// }
+//  // }
 
 function popCheckout() {
   // Retrieve past orders from localStorage
@@ -183,7 +180,6 @@ function popCheckout() {
   // Display order confirmation message
   alert("Order Submitted Successfully.");
 
-  
   // Display past orders
   displayPastOrders(pastOrders);
 }
@@ -197,7 +193,6 @@ function displayPastOrders(pastOrders) {
   outputDiv.appendChild(newHeader);
   // Display past orders
   pastOrders.forEach((order) => {
-
     const newDiv = document.createElement("div");
     newDiv.classList.add("parentDiv");
 
@@ -227,5 +222,9 @@ function displayPastOrders(pastOrders) {
 
     // outputDiv.appendChild(newHeader);
     outputDiv.appendChild(newDiv);
+
+    document.getElementById("subtotal").innerHTML = "-";
+    document.getElementById("tax").innerHTML = "-";
+    document.getElementById("total").innerHTML = "-";
   });
 }
